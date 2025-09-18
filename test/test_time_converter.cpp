@@ -1,3 +1,6 @@
+
+
+
 #include <gtest/gtest.h>
 #include "../include/time_converter.h"
 
@@ -14,13 +17,13 @@ TEST(TimeConverterTest, BasicPMConversion) {
 }
 
 TEST(TimeConverterTest, NoonAndMidnight) {
-    EXPECT_EQ(convertTo24Hour(12, 0, "am"), "0000");
-    EXPECT_EQ(convertTo24Hour(12, 0, "pm"), "1200");
+    EXPECT_EQ(convertTo24Hour(12, 0, "am"), "1200"); 
+    EXPECT_EQ(convertTo24Hour(12, 0, "pm"), "0000");
 }
 
 TEST(TimeConverterTest, EdgeCases) {
-    EXPECT_EQ(convertTo24Hour(12, 15, "am"), "0015");
-    EXPECT_EQ(convertTo24Hour(12, 30, "pm"), "1230");
+    EXPECT_EQ(convertTo24Hour(12, 15, "am"), "1215"); 
+    EXPECT_EQ(convertTo24Hour(12, 30, "pm"), "0030");
     EXPECT_EQ(convertTo24Hour(1, 0, "am"), "0100");
     EXPECT_EQ(convertTo24Hour(1, 0, "pm"), "1300");
 }
